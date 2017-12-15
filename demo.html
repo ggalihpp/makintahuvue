@@ -1,0 +1,74 @@
+<html>
+        <head>
+            <script src="https://unpkg.com/vue"></script>
+            <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+            <link rel="stylesheet" href="assets/css/style.css">
+        </head>
+        <body>
+        <div id="app">
+                <h1 v-show="win"><center>YOU WIN !!!</center></h1><br><br>
+        
+        
+            <div class="w3-light-grey w3-xlarge">
+                    <div class=">w3-container w3-red test" :style="{width: bar + '%' }">{{ bar }}%</div>
+            </div> 
+            <br><br>
+            <transition name="fade">
+                <button class="w3-button w3-block w3-teal" v-on:click="shoot" v-if="!win">Awch!</button>
+            </transition>
+            
+            <hr><hr><hr>
+            <input type="text" v-model="color" > <input type="text" v-model="width"> <p>color: {{ color }} Width: {{ width }} bar: {{ bar }} win: {{ win }}</p>
+            <div class="kotak" :style="myBox"></div>
+        </div>
+        
+        <script>
+            var vue = new Vue({
+                el: '#app',
+                data : {
+                    bar: 100,
+                    win: false,
+                    modalShown: false,
+                    color: "gray",
+                    width: 100
+                },
+                methods: {
+                    shoot: function () {
+                        this.bar = this.bar - 10;
+                        // if(this.bar == 0){
+                        //     this.win = true;
+                        // }
+                        
+                    },
+                    toggleModal: function () {
+                        this.modalShown = !this.modalShown;
+                    }
+                },
+                computed: {
+                    myBox: function () {
+                        return {
+                            backgroundColor: this.color,
+                            width: this.width + '%'
+                        };
+                    }
+                },
+                watch: {
+                    bar: function (value) {
+                        console.log(value);
+                        var vm = this;
+        
+                        if(vm.bar <= 0){
+                            vm.win = true;
+                        }else if(vm.bar > 0){
+                            vm.win = false;
+                        }
+        
+                        // setTimeout(function () {
+                        //     vm.bar += 2;
+                        // }, 1500)
+                    }
+                }
+            })
+        </script>
+        </body>
+        </html>

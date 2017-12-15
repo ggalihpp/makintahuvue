@@ -1,0 +1,61 @@
+#app {
+    margin: 25px 10%;
+    width: 80%;
+    margin-top: 20vh;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 1s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+opacity: 0
+}
+
+
+
+.test {
+    transition: 1s;
+}
+
+.kotak {
+    width: 80%;
+    height: 100px;
+    background-color: gray;
+    display: inline-block;
+    margin: 15px;
+    margin-left: 0px;
+    transition: 1.5s;
+}
+
+/* FOR TEMPLATE */
+
+container { 
+    padding: .5vw;
+    font-size: 0;
+    display: -ms-flexbox;
+    -ms-flex-wrap: wrap;
+    -ms-flex-direction: column;
+    -webkit-flex-flow: row wrap; 
+    flex-flow: row wrap; 
+    display: -webkit-box;
+    display: flex;
+  }
+  container div { 
+    -webkit-box-flex: auto;
+    -ms-flex: auto;
+    flex: auto; 
+    width: 400px; 
+    margin: .5vw; 
+  }
+  container div img { 
+    width: 100%; 
+    height: auto; 
+  }
+  @media screen and (max-width: 400px) {
+    .container div { margin: 0; }
+    .container { padding: 0; }
+    
+  }
+
+  .animasi {
+      transition: 3s;
+  }

@@ -1,0 +1,5 @@
+Ganti image jadi flex: https://codepen.io/dudleystorey/pen/Kgofa
+
+Template W3s : https://www.w3schools.com/w3css/w3css_templates.asp
+
+link css W3s : https://www.w3schools.com/w3css/w3css_downloads.asp
